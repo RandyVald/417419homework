@@ -22,9 +22,28 @@ int GetCount(string[] Array)
     return count;
 }
 
+string[] CreatNewArr(string[] Array, int count)
+{
+    string[] NewArr = new string[count];
+    int k = 0;
+
+    for (int i = 0; i < Array.Length; i++)
+    {
+        if (Array[i].Length <= 3)
+        {
+            NewArr[k] = Array[i];
+            k++;
+        }
+    }
+    return NewArr;
+}
+
+
+
 Console.Clear();
 
 string[] Array = ["Hello", "2", "world", ":-)"];
 int Count = GetCount(Array);
+string[] NewArr = CreatNewArr(Array, Count);
 
 System.Console.WriteLine(Count);
